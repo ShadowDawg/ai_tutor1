@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1094830314194",
+    "project_id": "ai-tutor1",
+    "storage_bucket": "ai-tutor1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094830314194:android:2ce63ca99c177f5660930b",
+        "android_client_info": {
+          "package_name": "com.example.ai_tutor1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9VO7frvVXPgdQ6E_iYzABHm8cj3qLEMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
