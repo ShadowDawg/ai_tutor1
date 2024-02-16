@@ -219,6 +219,7 @@ class _LearningHomePageState extends State<LearningHomePage> {
         builder: (context, snapshot) {
           // Check if the future is still loading
           if (snapshot.connectionState == ConnectionState.waiting) {
+            // ignore: prefer_const_constructors
             return Scaffold(
               backgroundColor: AppColors.backgroundColor,
               body: const Center(
@@ -292,7 +293,16 @@ class _LearningHomePageState extends State<LearningHomePage> {
                             );
                           },
                         ),
-                      ]
+                      ],
+                      // const Divider(
+                      //   color:
+                      //       Colors.grey, // Adjust the divider color as needed
+                      //   height: 20,
+                      //   thickness: 2,
+                      //   indent: 20,
+                      //   endIndent: 20,
+                      // ),
+                      //kvTile(), // Add the kvTile widget here
                     ],
                   ),
                 ),

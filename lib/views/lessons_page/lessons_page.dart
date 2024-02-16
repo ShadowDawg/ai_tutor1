@@ -1,4 +1,5 @@
 import 'package:ai_tutor1/colors.dart';
+import 'package:ai_tutor1/imageAdresses.dart';
 import 'package:ai_tutor1/models/chapter_info_model.dart';
 import 'package:ai_tutor1/views/subject_pages/chat_page/chat_page.dart';
 import 'package:flutter/material.dart';
@@ -86,8 +87,9 @@ class LevelsHeaderWidget extends StatelessWidget {
       decoration: BoxDecoration(
           color: AppColors.tileColor, // Adjust the background color as needed
           borderRadius: BorderRadius.circular(10),
-          image: const DecorationImage(
-            image: AssetImage('assets/images/backgrounds/levelHeader.jpeg'),
+          image: DecorationImage(
+            //image: AssetImage('assets/images/backgrounds/levelHeader.jpeg'),
+            image: AssetImage(levelHeaderKV),
             fit: BoxFit.cover,
           )),
       child: Column(

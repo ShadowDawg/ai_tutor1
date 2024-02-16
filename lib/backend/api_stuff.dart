@@ -3,8 +3,8 @@ import 'package:ai_tutor1/models/chapter_info_model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-const baseUrl = "http://10.0.2.2:3000/api"; // local
-//const baseUrl = "https://ornate-entropy-414110.el.r.appspot.com/api";
+//const baseUrl = "http://10.0.2.2:3000/api"; // local
+const baseUrl = "https://ornate-entropy-414110.el.r.appspot.com/api";
 
 Future<String> sendMessageToAPI(String text) async {
   try {

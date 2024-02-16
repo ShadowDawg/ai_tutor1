@@ -110,6 +110,8 @@ class _ChatPageState extends State<ChatPage> {
     print(currentThreadId);
     print(text);
 
+    //showCompletionModal(context, false, 0, 0);
+
     // if (mounted) {
     //   showCompletionModal(context, false, 0, 0);
     //   UserDataProvider userDataProvider =
@@ -501,10 +503,10 @@ class _ChatPageState extends State<ChatPage> {
                           fontFamily: 'Pixelify'),
                     ),
                     onPressed: () async {
-                      addStars((await getUserId())!, 20);
                       if (mounted) {
                         Navigator.pop(context); // Dismiss the modal sheet
                       }
+                      addStars((await getUserId())!, 20);
                     },
                   ),
                 ),
@@ -525,8 +527,8 @@ class _ChatPageState extends State<ChatPage> {
       },
     ).then((value) {
       // Navigate back to the previous page after the modal is dismissed
-      //Navigator.pop(context); // to levels page
-      Navigator.popUntil(context, ModalRoute.withName('/home')); // to home
+      Navigator.pop(context); // to levels page
+      //Navigator.popUntil(context, ModalRoute.withName('/home')); // to home
     });
   }
 

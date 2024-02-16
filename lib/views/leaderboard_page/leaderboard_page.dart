@@ -114,10 +114,10 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
       body: SafeArea(
         child: Column(
           children: [
-            const LeaderboardTitleCard(
+            LeaderboardTitleCard(
               username: 'Leaderboard',
-              stars: 16,
-              streak: 3,
+              stars: userData!.stars.toInt(),
+              streak: userData!.streak.toInt(),
             ), // The custom widget for the title card
             Expanded(
               child: ListView.builder(

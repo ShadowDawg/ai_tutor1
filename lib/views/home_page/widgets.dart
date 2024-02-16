@@ -1,4 +1,5 @@
 import 'package:ai_tutor1/colors.dart';
+import 'package:ai_tutor1/imageAdresses.dart';
 import 'package:ai_tutor1/misc_utils.dart';
 import 'package:flutter/material.dart';
 
@@ -184,38 +185,46 @@ class CategoryCard extends StatelessWidget {
       titleColor = Colors.black;
     }
 
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
-        padding: const EdgeInsets.all(16.0),
-        decoration: BoxDecoration(
-          // color: Colors.white,
-          color: AppColors.tileColor,
-          image: DecorationImage(
+    return Material(
+      // Wrap with Material
+      color: Colors.transparent, // Avoid any unwanted background color
+      child: InkWell(
+        // Use InkWell for tap feedback
+        onTap: onTap,
+        borderRadius:
+            BorderRadius.circular(20.0), // Match the container's border radius
+        child: AnimatedContainer(
+          // Use AnimatedContainer for animations
+          duration: const Duration(milliseconds: 20), // Animation duration
+          margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+          padding: const EdgeInsets.all(16.0),
+          decoration: BoxDecoration(
+            color: AppColors.tileColor,
+            image: DecorationImage(
               image: AssetImage(
                   'assets/images/backgrounds/${title.toLowerCase()}-tile.jpeg'),
-              fit: BoxFit.cover),
-          borderRadius: BorderRadius.circular(20.0),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
-              spreadRadius: 2,
-              blurRadius: 6,
-              offset: const Offset(0, 3),
+              fit: BoxFit.cover,
             ),
-          ],
-        ),
-        child: Center(
-          child: Text(
-            title,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 40, // Increase the font size for bigger letters
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Pixelify',
-              color: titleColor,
-              //color: AppColors.
+            borderRadius: BorderRadius.circular(20.0),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.2),
+                spreadRadius: 2,
+                blurRadius: 6,
+                offset: const Offset(0, 3),
+              ),
+            ],
+          ),
+          child: Center(
+            child: Text(
+              title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 40, // Increase the font size for bigger letters
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Pixelify',
+                color: titleColor,
+              ),
             ),
           ),
         ),
@@ -223,3 +232,126 @@ class CategoryCard extends StatelessWidget {
     );
   }
 }
+
+class kvTile extends StatelessWidget {
+  // You can hardcode the title and image URL or pass them as parameters if needed
+  final String title =
+      "Built with ❤️ for Students of KV by Students of IITM."; // Example fixed title
+  final String imageUrl = leaderboardBG; // Example fixed background image path
+
+  kvTile({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.transparent, // Avoid any unwanted background color
+      child: InkWell(
+        onTap: () {
+          // Define what happens when the tile is tapped
+          print("kvTile tapped!");
+        },
+        borderRadius:
+            BorderRadius.circular(20.0), // Match the container's border radius
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200), // Animation duration
+          margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+          padding: const EdgeInsets.all(16.0),
+          decoration: BoxDecoration(
+            color: AppColors.tileColor, // Use your theme's color for the tile
+            image: DecorationImage(
+              image: AssetImage(kvImage), // Use the fixed background image
+              fit: BoxFit.cover,
+            ),
+            borderRadius: BorderRadius.circular(20.0),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.2),
+                spreadRadius: 2,
+                blurRadius: 6,
+                offset: const Offset(0, 3),
+              ),
+            ],
+          ),
+          child: Center(
+            child: Text(
+              title,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 30, // Font size for the title
+                fontWeight: FontWeight.bold,
+                //fontFamily: 'Pixelify',
+                color: Colors.black, // Color for the title
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+// class CategoryCard extends StatelessWidget {
+//   final String title;
+//   final VoidCallback onTap;
+//   final String imageUrl;
+
+//   const CategoryCard({
+//     Key? key,
+//     required this.title,
+//     required this.onTap,
+//     required this.imageUrl,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     Color titleColor = Colors.white; // Default color
+
+//     // Set text color based on the title
+//     if (title.toLowerCase() == 'science' || title.toLowerCase() == 'civics') {
+//       titleColor = Colors.white;
+//     } else if (title.toLowerCase() == 'history') {
+//       titleColor = Colors.black;
+//     }
+
+//     return GestureDetector(
+//       onTap: onTap,
+//       child: AnimatedContainer(
+//         duration: const Duration(milliseconds: 200), // Animation duration,
+//         margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+//         padding: const EdgeInsets.all(16.0),
+//         decoration: BoxDecoration(
+//           // color: Colors.white,
+//           color: AppColors.tileColor,
+//           image: DecorationImage(
+//               image: AssetImage(
+//                   'assets/images/backgrounds/${title.toLowerCase()}-tile.jpeg'),
+//               fit: BoxFit.cover),
+//           borderRadius: BorderRadius.circular(20.0),
+//           boxShadow: [
+//             BoxShadow(
+//               color: Colors.grey.withOpacity(0.2),
+//               spreadRadius: 2,
+//               blurRadius: 6,
+//               offset: const Offset(0, 3),
+//             ),
+//           ],
+//         ),
+//         child: Center(
+//           child: Text(
+//             title,
+//             textAlign: TextAlign.center,
+//             style: TextStyle(
+//               fontSize: 40, // Increase the font size for bigger letters
+//               fontWeight: FontWeight.bold,
+//               fontFamily: 'Pixelify',
+//               color: titleColor,
+//               //color: AppColors.
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }

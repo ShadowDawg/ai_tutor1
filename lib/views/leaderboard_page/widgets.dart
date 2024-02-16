@@ -19,31 +19,37 @@ class LeaderboardTitleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 220, // Adjust height as needed
+      height:
+          MediaQuery.of(context).size.height * 0.3, // Adjust height as needed
       margin: const EdgeInsets.all(16.0),
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         color: AppColors.tileColor, // Use your theme's color
         borderRadius: BorderRadius.circular(12.0),
+        image: DecorationImage(
+          image: AssetImage(leaderboardBG),
+          fit: BoxFit.cover,
+        ),
       ),
-      child: Column(
+      child: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            username,
-            style: const TextStyle(
-              fontSize: 28,
+            "Leaderboard",
+            style: TextStyle(
+              fontSize: 30,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Colors.amber,
+              fontFamily: "Pixelify",
             ),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 20), // Spacing
+          SizedBox(height: 20), // Spacing
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _buildStatColumn("🔥 $streak", 'Streak'),
-              _buildStatColumn("$stars", 'Stars'),
+              // _buildStatColumn("🔥 $streak", 'Streak'),
+              // _buildStatColumn("⭐ $stars", 'Stars'),
             ],
           ),
         ],
@@ -58,18 +64,18 @@ class LeaderboardTitleCard extends StatelessWidget {
         Text(
           value,
           style: const TextStyle(
-            fontSize: 36,
+            fontSize: 30,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Colors.amberAccent,
           ),
         ),
-        Text(
-          label,
-          style: const TextStyle(
-            fontSize: 25,
-            color: Colors.white70,
-          ),
-        ),
+        // Text(
+        //   label,
+        //   style: const TextStyle(
+        //     fontSize: 25,
+        //     color: Colors.red,
+        //   ),
+        // ),
       ],
     );
   }
