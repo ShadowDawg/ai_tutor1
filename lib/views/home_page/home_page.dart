@@ -62,13 +62,12 @@ class _LearningHomePageState extends State<LearningHomePage> {
   }
 
   Future<void> initSetup() async {
+    // Initialize user data first, then load subject list sequentially
+    await initUserData();
+    await loadSubjectList();
     // //print("ayyy");
 
-    await Future.wait([
-      initUserData(),
-      loadSubjectList(), // Assuming this is your method to load the subject list
-    ]);
-
+    
     // await initUserData(); // Ensure user data is fetched and stored first.
     // await fetchLastLessonData(); // Then fetch last lesson data.
     // await loadSubjectList(); // Finally, load the subject list.
